@@ -1,0 +1,39 @@
+/* Layout component code */
+.flu {
+  /* The custom properties should not inherit from parent layouts */
+  --flu-stackpoint: initial;
+  --flu-margin-h: 0px; /* This needs to have a unit for calc() below */
+  --flu-margin-v: 0px; /* This needs to have a unit for calc() below */
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  margin-top: calc(-1 * var(--flu-margin-v, 0px));
+  margin-left: calc(-1 * var(--flu-margin-h, 0px));
+}
+.flu-cell {
+  /* if a margin is in play, account for this in our stackpoint calculations */
+  /* notably this will also work if a stackpoint is not used. */
+  --flu-margin-mod: calc( var(--flu-stackpoint, -1 * var(--flu-margin-h, 0px)) - var(--flu-stackpoint, 0px) + var(--flu-margin-h, 0px) );
+  --flu-stackpoint-calc: calc( ( var(--flu-stackpoint, 100%) - 100% + var(--flu-margin-mod, 0px) ) * 999);
+
+  flex-grow: 1;
+  /* This will always have a value, due to CSS variable defaults set in .flu above */
+  flex-basis: var(--flu-stackpoint-calc);
+  margin: 0;
+  margin-top: var(--flu-margin-v, 0);
+  margin-left: var(--flu-margin-h, 0);
+}
+.flu-cell-wrap {
+  flex-basis: auto;
+}
+
+/* Flex layout inline */
+.flu-inline > .flu-cell {
+  flex-grow: 0;
+}
+
+/* Debug */
+.flu-debug-outline .flu-cell {
+  outline: 1px dotted rgba(0,0,0,.4);
+  outline-offset: -1px;
+}

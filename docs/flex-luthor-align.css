@@ -1,0 +1,24 @@
+.flu-cell-align-v-center,
+.flu-cell-align-v-end,
+.flu-cell-align-h-center,
+.flu-cell-align-h-end {
+  display: flex;
+}
+.flu-cell-align-v-center {
+  align-items: center;
+}
+.flu-cell-align-v-end {
+  align-items: flex-end;
+}
+.flu-cell-align-h-center {
+  justify-content: center;
+}
+.flu-cell-align-h-end {
+  justify-content: flex-end;
+}
+.flu-cell-align-v-center > .flu,
+.flu-cell-align-v-end > .flu,
+.flu-cell-align-h-center > .flu,
+.flu-cell-align-h-end > .flu {
+  flex-grow: 1;
+}

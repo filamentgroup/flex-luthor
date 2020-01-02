@@ -1,0 +1,28 @@
+/* Separators */
+@supports (clip-path: inset(0px 0px)) or (-webkit-clip-path: inset(0px 0px)) {
+  .flu-separator-v,
+  .flu-separator-h {
+    -webkit-clip-path: inset(var(--flu-margin-v, 0px) 0 0 var(--flu-margin-h, 0px));
+    clip-path: inset(var(--flu-margin-v, 0px) 0 0 var(--flu-margin-h, 0px));
+  }
+  .flu-separator-v > .flu-cell,
+  .flu-separator-h > .flu-cell {
+    position: relative;
+  }
+  .flu-separator-h > .flu-cell:before {
+    content: "";
+    position: absolute;
+    left: calc(-.5 * var(--flu-margin-h, 0) - .5px);
+    top: 0;
+    bottom: 0;
+    border-left: 1px solid var(--flu-separator-h-color, var(--flu-separator-color, rgba(162,208,239,.35)));
+  }
+  .flu-separator-v > .flu-cell:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: calc(-.5 * var(--flu-margin-v, 0) - 1px);
+    right: 0;
+    border-top: 1px solid var(--flu-separator-v-color, var(--flu-separator-color, rgba(162,208,239,.35)));
+  }
+}

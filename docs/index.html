@@ -31,8 +31,6 @@
 			margin-bottom: 3em;
 		}
 		.source-details summary {
-			/* Note this blows away the arrow in Firefox so we need another method to show an arrow */
-			display: inline-block;
 			padding: .5rem 1rem;
 			border: 1px solid #eee;
 			color: #555;
@@ -41,35 +39,39 @@
 			text-transform: uppercase;
 			letter-spacing: .5px;
 		}
-		.source-details summary::-webkit-details-marker {
-			display: none;
-		}
-		.source-details summary:before {
-			display: inline-block;
-			content: "";
-			margin-right: .75em;
-			width: 0; 
-			height: 0; 
-			border-top: .4em solid transparent;
-			border-bottom: .4em solid transparent;
-			border-left: .4em solid;
-		}
-		.source-details[open] summary:before {
-			transform: rotate(90deg);
-			/*border-bottom: none;
-			border-left: .4em solid transparent;
-			border-right: .4em solid transparent;
-			border-top: .4em solid;*/
-		}
-		.source-details summary + * {
-			clear: left;
-		}
 		.source-details[open] summary {
 			border-top-right-radius: .25rem;
 			border-top-left-radius: .25rem;
 			background-color: #444;
 			color: #fff;
 			border-color: transparent;
+		}
+
+		@supports(transform: rotate(90deg)) {
+			.source-details summary {
+				/* Note this blows away the arrow in Firefox so we need another method to show an arrow */
+				display: inline-block;
+			}
+			.source-details summary::-webkit-details-marker {
+				display: none;
+			}
+			.source-details summary:before {
+				display: inline-block;
+				content: "";
+				margin-right: .75em;
+				width: 0; 
+				height: 0; 
+				border-top: .4em solid transparent;
+				border-bottom: .4em solid transparent;
+				border-left: .4em solid;
+			}
+			.source-details[open] summary:before {
+				transform: rotate(90deg);
+				/*border-bottom: none;
+				border-left: .4em solid transparent;
+				border-right: .4em solid transparent;
+				border-top: .4em solid;*/
+			}
 		}
 		.source-details pre {
 			margin: 0;

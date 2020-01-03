@@ -5,3 +5,11 @@ A small wrapper library to help with responsive intrinsic-sized Flexbox layouts 
 ## Demo
 
 [https://filamentgroup.github.io/flex-luthor/](https://filamentgroup.github.io/flex-luthor/)
+
+## Installation
+
+Available on [npm](https://www.npmjs.com/package/flex-luthor).
+
+```
+npm install flex-luthor --save
+```

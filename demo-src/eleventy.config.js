@@ -6,6 +6,10 @@ module.exports = function(eleventyConfig) {
 
 	eleventyConfig.addPassthroughCopy("*.css");
 	eleventyConfig.addPassthroughCopy("demo-src/*.css");
+	eleventyConfig.setBrowserSyncConfig({
+		ui: false,
+		ghostMode: false
+	});
 
 	eleventyConfig.addPairedShortcode("example", function(content, args) {
 		let [language, ...highlightNumbers] = args.split(" ");
@@ -14,7 +18,7 @@ module.exports = function(eleventyConfig) {
 	${content}
 </resize-asaurus>
 <details class="source-details">
-	<summary>Source code</summary>
+	<summary>View Source</summary>
 	${pairedShortcode(content, language, highlightNumbers.join(" "))}
 </details>`;
 	});

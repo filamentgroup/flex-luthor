@@ -1,19 +1,19 @@
 /* Debug Background colors */
-.flu-debug-fill > .flu-cell:nth-child(6n) {
+.fg-layout-debug-fill > .fg-layout-cell:nth-child(6n) {
   background-color: #fea3aa;
 }
-.flu-debug-fill > .flu-cell:nth-child(6n+1) {
+.fg-layout-debug-fill > .fg-layout-cell:nth-child(6n+1) {
   background-color: #f8b88b;
 }
-.flu-debug-fill > .flu-cell:nth-child(6n+2) {
+.fg-layout-debug-fill > .fg-layout-cell:nth-child(6n+2) {
   background-color: #faf884;
 }
-.flu-debug-fill > .flu-cell:nth-child(6n+3) {
+.fg-layout-debug-fill > .fg-layout-cell:nth-child(6n+3) {
   background-color: #baed91;
 }
-.flu-debug-fill > .flu-cell:nth-child(6n+4) {
+.fg-layout-debug-fill > .fg-layout-cell:nth-child(6n+4) {
   background-color: #b2cefe;
 }
-.flu-debug-fill > .flu-cell:nth-child(6n+5) {
+.fg-layout-debug-fill > .fg-layout-cell:nth-child(6n+5) {
   background-color: #f2a2e8;
 }
